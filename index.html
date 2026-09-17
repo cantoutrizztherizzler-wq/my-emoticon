@@ -1,20 +1,84 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Emoticon</title>
-</head>
-<body>
-    <h1>Click to copy!</h1>
+    <title>Emoticon Copier</title>
 
-    <button onclick="copyEmoticon()">( ͡^ ͜ʖ ͡^)</button>
+    <style>
+        body {
+            margin: 0;
+            background: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 76px;
+        }
+
+        h1 {
+            margin: 0 0 14px 0;
+            font-size: 34px;
+            font-weight: 400;
+        }
+
+        /* The emoticon */
+        #emoticon {
+            display: inline-block;
+            padding: 15px 23px;
+            background: #e2e2e2;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Big COPY button */
+        #copyButton {
+            display: block;
+            width: 240px;
+            height: 145px;
+            margin: 33px auto 0 auto;
+
+            background: #f4c97a;
+            border: none;
+
+            font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+            font-size: 58px;
+            font-weight: 900;
+
+            cursor: pointer;
+        }
+
+        #copyButton:hover {
+            background: #edbf6d;
+        }
+
+        #copyButton:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>click to copy!</h1>
+
+        <button id="emoticon" onclick="copyEmoticon()">
+            ( ͡^ ͜ʖ ͡^)
+        </button>
+
+        <button id="copyButton" onclick="copyEmoticon()">
+            COPY
+        </button>
+
+    </div>
 
     <script>
         function copyEmoticon() {
             navigator.clipboard.writeText("( ͡^ ͜ʖ ͡^)");
-            alert("Copied!");
         }
     </script>
+
 </body>
 </html>
-```
